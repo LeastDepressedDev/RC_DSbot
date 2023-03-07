@@ -16,19 +16,11 @@
 #include <dpp/dpp.h>
 
 inline struct {
-<<<<<<< HEAD
-	const std::string TOKEN = "{Your tokin}";
+	const std::string TOKEN = "MTA3NjU5ODAxNDkwNDM4MTU3Mg.G174an.L2KTQgqA__9BLX9cXCTuTRGoaMffIZOKYXAB9U";
 	bool cpl = false;
 	dpp::cluster* BOT;
 	const uint16_t INTS = dpp::i_default_intents | dpp::i_privileged_intents;
-	const std::string D_HOOK_URL = "{Hook url}";
-=======
-	const std::string TOKEN = "{There will be your token}";
-	bool cpl = false;
-	dpp::cluster* BOT;
-	const uint16_t INTS = dpp::i_default_intents | dpp::i_privileged_intents;
-	const std::string D_HOOK_URL = "{And your dev log webhook}";
->>>>>>> ea27a42 (This will be deleted)
+	const std::string D_HOOK_URL = "https://discord.com/api/webhooks/1077557628760240189/19kfP3DyX3krv0ukiNiFymoX1Htv_DlqtRI-bAm1-c9gYT9zZVj4Quf_74kP-7FCQZX4";
 	dpp::webhook DEBUG_HOOK;
 
 	const std::string bot_name = "RC bot";
