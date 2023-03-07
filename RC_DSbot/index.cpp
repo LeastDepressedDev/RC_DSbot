@@ -8,8 +8,6 @@
 
 ;
 
-//Simple change for test workablity
-
 void wrap() {
     dpp::cluster* bot = APP.BOT;
 
