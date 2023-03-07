@@ -111,12 +111,36 @@ int8_t wake_rsc() {
     return rsc::e_code::rsc_loaded;
 }
 
+void create_rsc() {
+    std::ofstream mf;
+    mf.open(rsc::PC_FNAME);
+    mf.close();
+}
+
 int main()
 {
     APP.BOT = new dpp::cluster(APP.TOKEN, APP.INTS);
 
     APP.BOT->on_log(dpp::utility::cout_logger());
 
+    APP.LOGGER = new ulogger();
+    APP.LOGGER->prefix = "RC_DS";
+    APP.LOGGER->sufix = "";
+    APP.LOGGER->rTime = true;
+
+    switch (wake_rsc()) {
+    case -1:
+        APP.LOGGER->log("[Err] Resource file not found. Creating new!");
+        create_rsc();
+    case -2:
+        APP.LOGGER->log("[Err] Error occured in resource loading.");
+        break;
+    case 1:
+        APP.LOGGER->log("[Inf] Resources loaded without any occurences");
+        break;
+    default:
+        break;
+    }
     wrap();
     //APP.cpl = true;
 

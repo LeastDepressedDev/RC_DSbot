@@ -192,6 +192,7 @@
     <ClCompile Include="string_proc.cpp" />
     <ClCompile Include="tte.cpp" />
     <ClCompile Include="tte_session.cpp" />
+    <ClCompile Include="ulogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ad_handler.h" />
@@ -251,6 +252,7 @@
     <ClInclude Include="string_proc.h" />
     <ClInclude Include="tte.h" />
     <ClInclude Include="tte_session.h" />
+    <ClInclude Include="ulogger.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="descr.txt" />

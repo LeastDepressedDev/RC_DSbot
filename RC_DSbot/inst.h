@@ -6,6 +6,7 @@
 #include "tte.h"
 #include "ChessHolder.h"
 #include "ad_handler.h"
+#include "assets.h"
 #include "gtm.h"
 #include <string>
 #include <vector>
@@ -72,16 +73,12 @@ const std::vector<command> commands = {
 		}
 	}),
 	command("test", "Command for testing some shit",[](const dpp::message_create_t& event, const std::vector<std::string> args) {
-		dpp::message msg = dpp::message(event.msg.channel_id, "");
-		dpp::component but = dpp::component();
-		but.set_label("X");
-		but.set_type(dpp::cot_button);
-		but.set_style(dpp::component_style::cos_primary);
-		msg.add_component(dpp::component().add_component(but.set_id("BUT_1")).add_component(but.set_id("BUT_2")).add_component(but.set_id("BUT_3")));
-		msg.add_component(dpp::component().add_component(but.set_id("BUT_4")).add_component(but.set_id("BUT_5")).add_component(but.set_id("BUT_6")));
-		msg.add_component(dpp::component().add_component(but.set_id("BUT_7")).add_component(but.set_id("BUT_8")).add_component(but.set_id("BUT_9")));
+		std::string toU = "";
+		for (std::pair<std::string, std::string> pr : rsc::m_keys) {
+			toU += pr.first + " : " + pr.second + '\n';
+		}
 
-		APP.BOT->message_create(msg);
+		APP.BOT->message_create(dpp::message(event.msg.channel_id, toU));
 	}),
 	command("avatar", "Get avatar of sender",[](const dpp::message_create_t& event, const std::vector<std::string> args) {
 		std::string url;
