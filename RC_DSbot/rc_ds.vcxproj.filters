@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DPP">
+      <UniqueIdentifier>{0c7369e9-66c5-45ca-8a7d-8891f46001be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{75b07bfa-1806-41b5-8c5b-6ebb44ca63ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\str">
+      <UniqueIdentifier>{5d46a020-5397-4666-9e0b-974ac4366c2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\chess">
+      <UniqueIdentifier>{34bcbd28-f7b5-439e-8bc0-9a889cc1c83c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tte">
+      <UniqueIdentifier>{8036e999-b052-45e2-a374-ea2ef9128505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\riki_rpg">
+      <UniqueIdentifier>{f07b8678-2cc4-44a1-9396-579aa727f3bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gtm">
+      <UniqueIdentifier>{7d26a02f-6f5f-4c39-b5c3-7194efc75015}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="index.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="string_proc.cpp">
+      <Filter>Source Files\str</Filter>
+    </ClCompile>
+    <ClCompile Include="ad_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessPartion.cpp">
+      <Filter>Source Files\chess</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessHolder.cpp">
+      <Filter>Source Files\chess</Filter>
+    </ClCompile>
+    <ClCompile Include="g_rand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tte_session.cpp">
+      <Filter>Source Files\tte</Filter>
+    </ClCompile>
+    <ClCompile Include="tte.cpp">
+      <Filter>Source Files\tte</Filter>
+    </ClCompile>
+    <ClCompile Include="RpgUser.cpp">
+      <Filter>Source Files\riki_rpg</Filter>
+    </ClCompile>
+    <ClCompile Include="riki_rpg.cpp">
+      <Filter>Source Files\riki_rpg</Filter>
+    </ClCompile>
+    <ClCompile Include="gtm.cpp">
+      <Filter>Source Files\gtm</Filter>
+    </ClCompile>
+    <ClCompile Include="gtm_session.cpp">
+      <Filter>Source Files\gtm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\auditlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\ban.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\cache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\channel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\cluster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\commandhandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\discord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\discordclient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\discordevents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\discordvoiceclient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\dispatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\dpp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\dtemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\emoji.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\etf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\export.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\guild.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\httplib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\integration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\intents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\invite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\json_fwd.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\presence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\prune.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\queues.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\role.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\slashcommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\sslclient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\stage_instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\stringops.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\sysdep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\voiceregion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\voicestate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\webhook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\win32_safe_warnings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\dpp-10.0\dpp\wsclient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="index.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="inst.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="string_proc.h">
+      <Filter>Source Files\str</Filter>
+    </ClInclude>
+    <ClInclude Include="ad_handler.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Auds.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessHolder.h">
+      <Filter>Source Files\chess</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessPartion.h">
+      <Filter>Source Files\chess</Filter>
+    </ClInclude>
+    <ClInclude Include="g_rand.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tte.h">
+      <Filter>Source Files\tte</Filter>
+    </ClInclude>
+    <ClInclude Include="tte_session.h">
+      <Filter>Source Files\tte</Filter>
+    </ClInclude>
+    <ClInclude Include="riki_rpg.h">
+      <Filter>Source Files\riki_rpg</Filter>
+    </ClInclude>
+    <ClInclude Include="rpg_ac.h">
+      <Filter>Source Files\riki_rpg</Filter>
+    </ClInclude>
+    <ClInclude Include="gtm.h">
+      <Filter>Source Files\gtm</Filter>
+    </ClInclude>
+    <ClInclude Include="gtm_session.h">
+      <Filter>Source Files\gtm</Filter>
+    </ClInclude>
+    <ClInclude Include="assets.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="descr.txt">
+      <Filter>Source Files\riki_rpg</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
