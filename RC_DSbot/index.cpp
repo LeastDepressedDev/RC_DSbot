@@ -75,13 +75,14 @@ int8_t wake_rsc() {
         return rsc::e_code::rsc_not_found;
     }
 
-    char buf[256];
-    std::string str = "";
-    while (f.readsome(buf, sizeof(buf)))
+    char* buf = new char[256];
+    std::string str;
+    while (f.read(buf, sizeof(buf)))
     {
         str += buf;
     }
 
+    unsigned short c;
     try {
         std::string p1 = "", p2 = "";
         for (int i = 0; i < str.length(); i++) {
@@ -92,6 +93,7 @@ int8_t wake_rsc() {
                         rsc::m_keys[p1] = p2;
                         p1 = "";
                         p2 = "";
+                        c++;
                         break;
                     }
                     else {
@@ -108,7 +110,7 @@ int8_t wake_rsc() {
         return rsc::e_code::rsc_error;
     }
 
-    return rsc::e_code::rsc_loaded;
+    return rsc::e_code::rsc_loaded + c;
 }
 
 void create_rsc() {
@@ -123,22 +125,16 @@ int main()
 
     APP.BOT->on_log(dpp::utility::cout_logger());
 
-    APP.LOGGER = new ulogger();
-    APP.LOGGER->prefix = "RC_DS";
-    APP.LOGGER->sufix = "";
-    APP.LOGGER->rTime = true;
-
-    switch (wake_rsc()) {
+    int8_t t = wake_rsc();
+    switch (t) {
     case -1:
-        APP.LOGGER->log("[Err] Resource file not found. Creating new!");
+        std::cout << "[Err] Resource file not found. Creating new!" << std::endl;
         create_rsc();
     case -2:
-        APP.LOGGER->log("[Err] Error occured in resource loading.");
-        break;
-    case 1:
-        APP.LOGGER->log("[Inf] Resources loaded without any occurences");
+        std::cout << "[Err] Error occured in resource loading." << std::endl;
         break;
     default:
+        std::cout << "[Inf] " << t - rsc::e_code::rsc_loaded << " resource loaded." << std::endl;
         break;
     }
     wrap();

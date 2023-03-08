@@ -34,9 +34,6 @@
     <Filter Include="Source Files\gtm">
       <UniqueIdentifier>{7d26a02f-6f5f-4c39-b5c3-7194efc75015}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ulog">
-      <UniqueIdentifier>{a32d2474-69bd-4612-a729-33072a1bd79f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="index.cpp">
@@ -74,9 +71,6 @@
     </ClCompile>
     <ClCompile Include="gtm_session.cpp">
       <Filter>Source Files\gtm</Filter>
-    </ClCompile>
-    <ClCompile Include="ulogger.cpp">
-      <Filter>ulog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -250,9 +244,6 @@
     </ClInclude>
     <ClInclude Include="assets.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ulogger.h">
-      <Filter>ulog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
