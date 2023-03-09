@@ -22,7 +22,6 @@ void wrap() {
 
     bot->on_message_create([](const dpp::message_create_t& event) {
         std::string cont = event.msg.content;
-        
         if (str_proc::start_with(cont, COM_PROC_DATA.call) && cont.length() > 0) {
             std::vector<std::string> agg(0);
             std::string builder = "";
@@ -50,6 +49,9 @@ void wrap() {
             }
 
             APP.BOT->message_create(dpp::message(event.msg.channel_id, "Command not found."));
+        }
+        else if (gtm::hasChannel(event.msg.channel_id)) {
+
         }
         });
 
