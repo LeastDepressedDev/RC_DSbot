@@ -16,6 +16,9 @@ namespace gtm {
 		dpp::snowflake ch_id;
 		dpp::snowflake guild_id;
 		std::map<dpp::snowflake, dpp::snowflake> linker;
+		std::map<dpp::snowflake, std::vector<std::string>> rsc_rs;
+		size_t ucount;
+		dpp::snowflake* u_list;
 
 		gtm_session(dpp::snowflake, dpp::snowflake, size_t, dpp::snowflake*);
 		gtm_session() {}
@@ -26,6 +29,7 @@ namespace gtm {
 		void pause();
 		void resume();
 
+		void r_rsctp();
 		void game_proc();
 		e_stage e_game;
 
@@ -33,20 +37,21 @@ namespace gtm {
 
 		dpp::snowflake w_msgId;
 		dpp::cluster* controller;
-		void theme_pick(std::string);
+		
 		void proc_m();
 		void spec_ch();
 		void c_update();
 
 		void fbd_con(dpp::snowflake);
 		void agr_con(dpp::snowflake);
-		//user id and his channel id
 		
 		unsigned short turn;
-		size_t ucount;
-		dpp::snowflake* u_list;
 
 		//theme_pick
-		//
+		void theme_pick(std::string);
+
+		//selecting react
+		void prep_react();
+		void sel_react(dpp::snowflake, uint16_t);
 	};
 }
