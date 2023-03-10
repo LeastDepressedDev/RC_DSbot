@@ -24,6 +24,7 @@ namespace gtm {
 		gtm_session() {}
 		void start();
 		void ex_task(dpp::snowflake sender, const dpp::message_create_t event);
+		void b_task(dpp::snowflake sender, const dpp::button_click_t event);
 	private:
 		bool paused = false;
 		void pause();
@@ -53,5 +54,16 @@ namespace gtm {
 		//selecting react
 		void prep_react();
 		void sel_react(dpp::snowflake, uint16_t);
+
+		//bool alr_reacted(dpp::snowflake);
+		void proc_p2();
+		std::map<dpp::snowflake, uint16_t> m_Lreact;
+
+
+		//guessing
+		void prep_guess();
+
+		bool alr_voted(dpp::snowflake);
+		std::map<dpp::snowflake, uint16_t> vote;
 	};
 }

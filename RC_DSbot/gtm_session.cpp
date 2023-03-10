@@ -1,9 +1,10 @@
 #include "gtm.h"
 #include "gtm_session.h"
+#include "string_proc.h"
 #include "g_rand.h"
 #include "index.h"
 
-const std::string WELCOME_MSG = "**Heya!**\nWelcome to the guess the meme game! Rules are pretty simple. At the game's start, players are getting 5 reaction cards. AI is randomly selecting a first driver. Driver is setting the situatuion(theme) for the other players.\nWhen theme is set, every player is selecting one reaction card from his resources. After that players are guessing the best reaction, if voices are equal, driver is selecting the winner. Winner is becoming the next driver.\nGame continues until last reaction card used.";
+const std::string WELCOME_MSG = "**Heya!**\nWelcome to the `guess the meme` game! Rules are pretty simple. At the game's start, players are getting 5 reaction cards. AI is randomly selecting a first driver. Driver is setting the situatuion(theme) for the other players.\nWhen theme is set, every player is selecting one reaction card from his resources. After that players are guessing the best reaction, if voices are equal, driver is selecting the winner. Winner is becoming the next driver.\nGame continues until last reaction card used.";
 const std::string REACT_DEF_MSG = "**Theme set!**\nNow it's time to react\n";
 
 gtm::gtm_session::gtm_session(dpp::snowflake gid, dpp::snowflake ch_id, size_t sz_t, dpp::snowflake* p_uList) {
@@ -14,6 +15,8 @@ gtm::gtm_session::gtm_session(dpp::snowflake gid, dpp::snowflake ch_id, size_t s
 	this->u_list = p_uList;
 	this->linker = std::map<dpp::snowflake, dpp::snowflake>();
 	this->rsc_rs = std::map<dpp::snowflake, std::vector<std::string>>();
+	this->m_Lreact = std::map<dpp::snowflake, uint16_t>();
+	this->vote = std::map<dpp::snowflake, uint16_t>();
 }
 
 void gtm::gtm_session::pause() {
@@ -101,6 +104,17 @@ void gtm::gtm_session::ex_task(dpp::snowflake sender, const dpp::message_create_
 	}
 }
 
+void gtm::gtm_session::b_task(dpp::snowflake sender, const dpp::button_click_t event) {
+	if (paused) return;
+	std::vector<std::string> cmd = str_proc::vec_split(event.custom_id, '_');
+	if (cmd[1] == "sel") {
+		this->sel_react(sender, std::stoi(cmd[2]));
+	}
+	else if (cmd[1] == "vt") {
+		this->sel_react(sender, std::stoi(cmd[2]));
+	}
+}
+
 void gtm::gtm_session::theme_pick(std::string theme) {
 	if (paused) return;
 	dpp::snowflake uid = this->u_list[this->turn];
@@ -111,21 +125,71 @@ void gtm::gtm_session::theme_pick(std::string theme) {
 }
 
 void gtm::gtm_session::prep_react() {
-	if (paused) return;
 	for (int i = 0; i < this->ucount; i++) {
 		std::string line = REACT_DEF_MSG;
+		dpp::snowflake ch_id = this->linker[this->u_list[i]];
 		int j = 1;
-		for (std::string rs : this->rsc_rs[this->u_list[i]]) {
+		std::vector<std::string> t_rsc = this->rsc_rs[this->u_list[i]];
+		for (std::string rs : t_rsc) {
 			line += std::to_string(j) + rs + '\n';
 			j++;
 		}
-		//
-		//
-		// Button act implementary
-		//
-		//
-		//
+
+		dpp::component but_sample = dpp::component();
+		but_sample.set_type(dpp::component_type::cot_button);
+		but_sample.set_style(dpp::component_style::cos_primary);
+
+		dpp::message msg(ch_id, line);
+
+		for (int o = 0; o < t_rsc.size(); o++) {
+			dpp::component line = dpp::component();
+			for (int h = 0; h < 5 && o < t_rsc.size(); h++) {
+				std::string s_edit = std::to_string(o);
+				line.add_component(but_sample.set_id("gtm_" + s_edit).set_label(s_edit));
+			}
+			msg.add_component(line);
+		}
+
+		this->controller->message_create(msg);
 	}
+}
+
+//bool gtm::gtm_session::alr_reacted(dpp::snowflake usr) {
+//	for (std::pair<dpp::snowflake, int> pr : this->m_Lreact) {
+//		if (pr.first == usr) {
+//			return true;
+//		}
+//	}
+//	return false;
+//}
+
+void gtm::gtm_session::sel_react(dpp::snowflake sender, uint16_t i_react) {
+	if (paused) return;
+	if (this->e_game == gtm::e_stage::selecting_react) {
+		//if (!alr_reacted(sender)) {
+			this->m_Lreact[sender] = i_react;
+		//}
+	}
+}
+
+void gtm::gtm_session::proc_p2() {
+	if (this->m_Lreact.size() == this->ucount) {
+		this->pause();
+		this->game_proc();
+	}
+}
+
+void gtm::gtm_session::prep_guess() {
+	//
+	//
+	//
+	//  Place for a guessing message sending and blah-blah-blah
+	//
+	//
+	//
+	//
+	//
+	//
 }
 
 void gtm::gtm_session::game_proc() {
@@ -135,7 +199,9 @@ void gtm::gtm_session::game_proc() {
 		this->e_game = e_stage::selecting_react;
 		this->prep_react();
 		break;
-	case gtm::e_stage::guessing:
+	case gtm::e_stage::selecting_react:
+		this->e_game = e_stage::guessing;
+		this->prep_guess();
 		break;
 	default:
 		break;

@@ -26,3 +26,19 @@ bool str_proc::contains(std::string str, std::string segment) {
 	}
 	return false;
 }
+
+std::vector<std::string> str_proc::vec_split(std::string str, char c_sep) {
+	std::vector<std::string> vec(0);
+	std::string buf = "";
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i] == c_sep) {
+			vec.push_back(buf);
+			buf = "";
+		}
+		else {
+			buf += str[i];
+		}
+	}
+	vec.push_back(buf);
+	return vec;
+}

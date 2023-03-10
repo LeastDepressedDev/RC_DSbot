@@ -67,6 +67,15 @@ void wrap() {
         if (event.custom_id.substr(0, 3) == "TTE") {
             tte::button_ofc(event.command.usr.id ,event.custom_id);
         }
+        else if (event.custom_id.substr(0, 3) == "gtm") {
+            gtm::gtm_session* aloc = gtm::getChSes(event.command.channel_id);
+            if (aloc != nullptr) {
+                aloc->b_task(event.command.usr.id, event);
+            }
+            else {
+                event.reply(dpp::message("Session not found"));
+            }
+        }
         });
 
    /*bot->on_ready([bot](const dpp::ready_t& event) {
