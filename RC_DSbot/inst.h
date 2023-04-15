@@ -209,11 +209,12 @@ const std::vector<command> commands = {
 		}
 	}),
 	command("gtm", "Guess the meme game", [](const dpp::message_create_t& event, const std::vector<std::string> args) {
-		if (args.size() > 1) {
+		event.reply(dpp::message("this command is temporary disabled due to my laziness!"));
+		/*if (args.size() > 1) {
 
 		}
 		else {
 			event.reply(dpp::message(event.msg.channel_id, gtm::sDescr));
-		}
+		}*/
 	})
 };

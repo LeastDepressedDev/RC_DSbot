@@ -50,7 +50,7 @@ void wrap() {
 
             APP.BOT->message_create(dpp::message(event.msg.channel_id, "Command not found."));
         }
-        else {
+        /*else {
             gtm::gtm_session* aloc = gtm::getChSes(event.msg.channel_id);
             if (aloc != nullptr) {
                 aloc->ex_task(event.msg.author.id, event);
@@ -58,7 +58,7 @@ void wrap() {
             else {
                 event.reply(dpp::message("Session not found"));
             }
-        }
+        }*/
         });
 
     bot->on_button_click([](const dpp::button_click_t& event) {
