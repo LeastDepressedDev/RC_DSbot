@@ -34,6 +34,12 @@
     <Filter Include="Source Files\gtm">
       <UniqueIdentifier>{7d26a02f-6f5f-4c39-b5c3-7194efc75015}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\lvl">
+      <UniqueIdentifier>{67116e2f-bbd7-4eff-8d60-f38fceeb0dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fw">
+      <UniqueIdentifier>{116a505f-0088-4498-ba0d-23808e482747}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="index.cpp">
@@ -71,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="gtm_session.cpp">
       <Filter>Source Files\gtm</Filter>
+    </ClCompile>
+    <ClCompile Include="LvlGrabber.cpp">
+      <Filter>Source Files\lvl</Filter>
+    </ClCompile>
+    <ClCompile Include="fw.cpp">
+      <Filter>Source Files\fw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +256,12 @@
     </ClInclude>
     <ClInclude Include="assets.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LvlGrabber.h">
+      <Filter>Source Files\lvl</Filter>
+    </ClInclude>
+    <ClInclude Include="fw.h">
+      <Filter>Source Files\fw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

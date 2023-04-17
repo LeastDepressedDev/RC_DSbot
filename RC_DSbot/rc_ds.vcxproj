@@ -180,8 +180,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fw.cpp" />
     <ClCompile Include="gtm.cpp" />
     <ClCompile Include="gtm_session.cpp" />
+    <ClCompile Include="LvlGrabber.cpp" />
     <ClCompile Include="RpgUser.cpp" />
     <ClCompile Include="ad_handler.cpp" />
     <ClCompile Include="ChessHolder.cpp" />
@@ -241,11 +243,13 @@
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\webhook.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\win32_safe_warnings.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\wsclient.h" />
+    <ClInclude Include="fw.h" />
     <ClInclude Include="gtm.h" />
     <ClInclude Include="gtm_session.h" />
     <ClInclude Include="g_rand.h" />
     <ClInclude Include="index.h" />
     <ClInclude Include="inst.h" />
+    <ClInclude Include="LvlGrabber.h" />
     <ClInclude Include="riki_rpg.h" />
     <ClInclude Include="rpg_ac.h" />
     <ClInclude Include="string_proc.h" />
