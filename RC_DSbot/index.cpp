@@ -11,6 +11,8 @@
 void wrap() {
     dpp::cluster* bot = APP.BOT;
 
+    APP.LVL = new LvlGrabber();
+
     /*bot->on_slashcommand([](const dpp::slashcommand_t& event) {
         std::string str = event.command.get_command_name();
         for (command cmd : commands) {
@@ -59,6 +61,7 @@ void wrap() {
                 event.reply(dpp::message("Session not found"));
             }
         }*/
+        APP.LVL->grab(event.msg.guild_id, event.msg.author.id, event.msg.content);
         });
 
     bot->on_button_click([](const dpp::button_click_t& event) {
