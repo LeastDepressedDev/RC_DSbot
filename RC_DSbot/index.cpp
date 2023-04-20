@@ -102,7 +102,7 @@ int8_t wake_rsc() {
         str += buf;
     }
 
-    unsigned short c;
+    unsigned short c = 0;
     try {
         std::string p1 = "", p2 = "";
         for (int i = 0; i < str.length(); i++) {
