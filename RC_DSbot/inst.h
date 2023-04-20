@@ -216,5 +216,17 @@ const std::vector<command> commands = {
 		else {
 			event.reply(dpp::message(event.msg.channel_id, gtm::sDescr));
 		}*/
+	}),
+	command("lvl", "Main level command", [](const dpp::message_create_t& event, const std::vector<std::string> args) {
+		if (args.size() > 1) {
+			if (args[1] == "msv") {
+				APP.LVL->upt();
+				return;
+			}
+		}
+
+		dpp::embed embd;
+		embd.color = dpp::colors::rallyart_crimson;
+		embd.title = "";
 	})
 };
