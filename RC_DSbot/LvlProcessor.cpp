@@ -25,3 +25,7 @@ UserStat leveling::proc(dpp::snowflake sv, std::string str) {
 std::string leveling::comp(UserStat stat) {
 	return std::to_string(stat.lvl) + ":" + std::to_string(stat.pts);
 }
+
+ULONG leveling::req(uint16_t t) {
+	return pow(2.71828182846, t / 20) + 10;
+}

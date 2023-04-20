@@ -4,6 +4,7 @@
 #include "LvlProcessor.h"
 
 #define DIR_LVL_GUILD_EXTENSION ".lvl"
+#define SAVE_REQ 100
 
 class LvlGrabber {
 public:
@@ -22,4 +23,8 @@ public:
 	void grab(dpp::snowflake guild, dpp::snowflake uid, std::string msg);
 
 	void display(dpp::snowflake guild, dpp::snowflake uid, dpp::snowflake chid);
+
+private:
+
+	void newA(dpp::snowflake, dpp::snowflake);
 };

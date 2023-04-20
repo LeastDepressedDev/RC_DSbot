@@ -10,4 +10,6 @@ typedef struct {
 namespace leveling {
 	extern UserStat proc(dpp::snowflake, std::string);
 	extern std::string comp(UserStat);
+
+	extern ULONG req(uint16_t lvl);
 }

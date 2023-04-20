@@ -12,6 +12,7 @@ LvlGrabber::LvlGrabber() {
 void LvlGrabber::read() {
 	for (const auto& f : std::filesystem::directory_iterator()) {
 		std::string fname = f.path().filename().string();
+		if (fname.substr(fname.length() - 4) == DIR_LVL_GUILD_EXTENSION) continue;
 
 		fname = fname.substr(0, fname.length()-4);
 
@@ -35,5 +36,36 @@ void LvlGrabber::upt() {
 		}
 
 		fw::upt(fname.c_str(), set);
+	}
+}
+
+void LvlGrabber::grab(dpp::snowflake guild, dpp::snowflake uid, std::string msg) {
+	ULONG pts = msg.length() / (pow(msg.length(), 2) / 20);
+
+	UserStat* stat = &this->mp[guild][uid];
+
+	if (stat == nullptr) {
+		this->newA(guild, uid);
+		stat = &this->mp[guild][uid];
+	}
+
+	pts += stat->pts;
+	if (pts >= leveling::req(stat->lvl)) {
+		pts -= leveling::req(stat->lvl);
+		stat->lvl++;
+		stat->pts = pts;
+	}
+
+	this->sizing++;
+	if (sizing > SAVE_REQ) this->upt();
+}
+
+void LvlGrabber::newA(dpp::snowflake guild, dpp::snowflake uid) {
+	if (&this->mp[guild] == nullptr) {
+		this->mp[guild] = std::map<dpp::snowflake, UserStat>();
+	}
+
+	if (&this->mp[guild][uid] == nullptr) {
+		this->mp[guild][uid] = { uid, 0UL, 0UL };
 	}
 }
