@@ -163,7 +163,7 @@ int main()
     wrap();
     //APP.cpl = true;
 
-    APP.DEBUG_HOOK = dpp::webhook(APP.D_HOOK_URL);
+    //APP.DEBUG_HOOK = dpp::webhook(APP.D_HOOK_URL);
 
     APP.BOT->start(dpp::st_wait);
 
