@@ -84,6 +84,9 @@
     <ClCompile Include="fw.cpp">
       <Filter>Source Files\fw</Filter>
     </ClCompile>
+    <ClCompile Include="LvlProcessor.cpp">
+      <Filter>Source Files\lvl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\auditlog.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="fw.h">
       <Filter>Source Files\fw</Filter>
+    </ClInclude>
+    <ClInclude Include="LvlProcessor.h">
+      <Filter>Source Files\lvl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

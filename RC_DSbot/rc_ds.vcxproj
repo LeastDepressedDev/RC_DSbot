@@ -184,6 +184,7 @@
     <ClCompile Include="gtm.cpp" />
     <ClCompile Include="gtm_session.cpp" />
     <ClCompile Include="LvlGrabber.cpp" />
+    <ClCompile Include="LvlProcessor.cpp" />
     <ClCompile Include="RpgUser.cpp" />
     <ClCompile Include="ad_handler.cpp" />
     <ClCompile Include="ChessHolder.cpp" />
@@ -250,6 +251,7 @@
     <ClInclude Include="index.h" />
     <ClInclude Include="inst.h" />
     <ClInclude Include="LvlGrabber.h" />
+    <ClInclude Include="LvlProcessor.h" />
     <ClInclude Include="riki_rpg.h" />
     <ClInclude Include="rpg_ac.h" />
     <ClInclude Include="string_proc.h" />
