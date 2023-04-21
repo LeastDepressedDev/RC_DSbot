@@ -4,7 +4,7 @@
 #include "LvlProcessor.h"
 
 #define DIR_LVL_GUILD_EXTENSION ".lvl"
-#define SAVE_REQ 100
+#define SAVE_REQ 10
 
 class LvlGrabber {
 public:

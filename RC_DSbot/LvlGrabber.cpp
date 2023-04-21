@@ -12,7 +12,7 @@ LvlGrabber::LvlGrabber() {
 void LvlGrabber::read() {
 	for (const auto& f : std::filesystem::directory_iterator()) {
 		std::string fname = f.path().filename().string();
-		if (fname.substr(fname.length() - 4) == DIR_LVL_GUILD_EXTENSION) continue;
+		if (fname.substr(fname.length() - 4, fname.length()) != DIR_LVL_GUILD_EXTENSION) continue;
 
 		fname = fname.substr(0, fname.length()-4);
 

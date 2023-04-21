@@ -12,6 +12,7 @@ void wrap() {
     dpp::cluster* bot = APP.BOT;
 
     APP.LVL = new LvlGrabber();
+    APP.LVL->upt();
 
     /*bot->on_slashcommand([](const dpp::slashcommand_t& event) {
         std::string str = event.command.get_command_name();
